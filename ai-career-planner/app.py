@@ -1,10 +1,8 @@
 from flask import Flask, render_template, redirect, url_for, request, session, flash
-from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from config import Config
+from extensions import db
 import os
-
-db = SQLAlchemy()
 
 
 def create_app():
@@ -18,6 +16,7 @@ def create_app():
     db.init_app(app)
 
     from models.user_model import User
+    from models.career_model import Career
 
     with app.app_context():
         db.create_all()
