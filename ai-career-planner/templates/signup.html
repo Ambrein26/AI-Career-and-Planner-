@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up - AI Career Planner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<main class="auth-container">
+    <h2>Create an account</h2>
+    <form method="post">
+        <label>Email
+            <input type="email" name="email" required>
+        </label>
+        <label>Password
+            <input type="password" name="password" required>
+        </label>
+        <button type="submit" class="btn">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+</main>
+</body>
+</html>
+

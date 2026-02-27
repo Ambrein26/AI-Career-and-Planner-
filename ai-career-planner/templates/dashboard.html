@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - AI Career Planner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header>
+    <h1>Dashboard</h1>
+    <nav>
+        <a href="{{ url_for('upload_resume') }}">Upload Resume</a>
+        <a href="{{ url_for('career_selection') }}">Choose Career</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </nav>
+</header>
+<main>
+    <p>Welcome to your AI career dashboard.</p>
+</main>
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Career Planner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header>
+    <h1>AI Career Planner</h1>
+    <nav>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('signup') }}">Sign Up</a>
+    </nav>
+</header>
+<main>
+    <section>
+        <h2>Plan your AI career with confidence</h2>
+        <p>Upload your resume, choose a target AI role, and get a personalized learning roadmap.</p>
+        <a class="btn" href="{{ url_for('signup') }}" class="btn">Get Started</a>
+    </section>
+</main>
+</body>
+</html>
+
