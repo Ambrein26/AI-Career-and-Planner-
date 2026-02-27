@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Resume - AI Career Planner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="dashboard-layout">
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <span class="logo-dot"></span>
+            <span>AI Career Planner</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="{{ url_for('dashboard') }}" class="nav-item">Dashboard</a>
+            <a href="{{ url_for('upload_resume') }}" class="nav-item active">Upload Resume</a>
+            <a href="{{ url_for('career_selection') }}" class="nav-item">Choose Career</a>
+            <a href="{{ url_for('results') }}" class="nav-item">Skill Gap & Results</a>
+            <a href="{{ url_for('roadmap') }}" class="nav-item">Roadmap</a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="{{ url_for('logout') }}" class="nav-item logout">Logout</a>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <div>
+                <h1>Upload your resume</h1>
+                <p class="muted">We’ll use your current skills and experience to tailor your AI career roadmap.</p>
+            </div>
+        </header>
+
+        <section class="card-grid">
+            <article class="card wide-card">
+                <form method="post" enctype="multipart/form-data">
+                    <h3>Select a resume file</h3>
+                    <p class="muted">Supported formats: Jpeg, Jpg, PDF, DOC, DOCX. Make sure your latest projects and skills are included.</p>
+
+                    <div style="margin: 1rem 0;">
+                        <input type="file" name="resume" accept=".jpeg,.jpg,.pdf,.doc,.docx" required>
+                    </div>
+
+                    <button type="submit" class="btn">Upload & Continue</button>
+                </form>
+            </article>
+        </section>
+    </main>
+</div>
+</body>
+</html>
+

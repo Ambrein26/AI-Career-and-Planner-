@@ -61,3 +61,179 @@ input {
     color: #f5f5f5;
 }
 
+/* Dashboard layout */
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 100vh;
+}
+
+.sidebar {
+    background: #050816;
+    border-right: 1px solid #1f2937;
+    padding: 1.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}
+
+.logo-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #22c55e, #22d3ee);
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-top: 1rem;
+}
+
+.nav-item {
+    padding: 0.55rem 0.75rem;
+    border-radius: 0.6rem;
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.nav-item.active {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: #f9fafb;
+}
+
+.nav-item:hover {
+    background: #111827;
+    color: #e5e7eb;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+}
+
+.nav-item.logout {
+    color: #fca5a5;
+}
+
+.dashboard-main {
+    padding: 1.5rem 2rem;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.muted {
+    color: #9ca3af;
+    margin-top: 0.35rem;
+}
+
+.muted.small {
+    font-size: 0.8rem;
+}
+
+.header-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btn.secondary {
+    background: transparent;
+    border: 1px solid #374151;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.card {
+    background: #111827;
+    border-radius: 1rem;
+    padding: 1.4rem 1.5rem;
+    border: 1px solid #1f2937;
+}
+
+.highlight-card {
+    background: radial-gradient(circle at top left, #1d4ed8, #0b1020);
+    border-color: #2563eb;
+}
+
+.wide-card {
+    grid-column: span 2;
+}
+
+.card h2,
+.card h3 {
+    margin-top: 0;
+}
+
+.pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.pill {
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid #1f2937;
+    font-size: 0.8rem;
+    color: #e5e7eb;
+}
+
+.card-actions {
+    margin-top: 0.5rem;
+}
+
+.link {
+    color: #60a5fa;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.progress-track {
+    position: relative;
+    width: 100%;
+    border-radius: 999px;
+    background: #020617;
+    border: 1px solid #1f2937;
+    height: 10px;
+    overflow: hidden;
+    margin: 0.75rem 0;
+}
+
+.progress-bar {
+    position: absolute;
+    inset: 0;
+    width: 0;
+    background: linear-gradient(90deg, #22c55e, #a855f7);
+    transition: width 0.4s ease-out;
+}
+

@@ -6,17 +6,85 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-<header>
-    <h1>Dashboard</h1>
-    <nav>
-        <a href="{{ url_for('upload_resume') }}">Upload Resume</a>
-        <a href="{{ url_for('career_selection') }}">Choose Career</a>
-        <a href="{{ url_for('logout') }}">Logout</a>
-    </nav>
-</header>
-<main>
-    <p>Welcome to your AI career dashboard.</p>
-</main>
+<div class="dashboard-layout">
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <span class="logo-dot"></span>
+            <span>AI Career Planner</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="{{ url_for('dashboard') }}" class="nav-item active">Dashboard</a>
+            <a href="{{ url_for('upload_resume') }}" class="nav-item">Upload Resume</a>
+            <a href="{{ url_for('career_selection') }}" class="nav-item">Choose Career</a>
+            <a href="{{ url_for('results') }}" class="nav-item">Skill Gap & Results</a>
+            <a href="{{ url_for('roadmap') }}" class="nav-item">Roadmap</a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="{{ url_for('logout') }}" class="nav-item logout">Logout</a>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <div>
+                <h1>Welcome back</h1>
+                <p class="muted">Plan, track, and upskill your AI career in one place.</p>
+            </div>
+            <div class="header-actions">
+                <a href="{{ url_for('upload_resume') }}" class="btn secondary">Upload Resume</a>
+                <a href="{{ url_for('career_selection') }}" class="btn">Start Planning</a>
+            </div>
+        </header>
+
+        <section class="card-grid">
+            <article class="card highlight-card">
+                <h2>Your AI journey</h2>
+                <p class="muted">Begin by uploading your current resume, then pick a target AI role to see your personalized skill gaps.</p>
+                <div class="pill-row">
+                    <span class="pill">Step 1 · Upload resume</span>
+                    <span class="pill">Step 2 · Choose role</span>
+                    <span class="pill">Step 3 · Follow roadmap</span>
+                </div>
+                <div class="card-actions">
+                    <a class="btn" href="{{ url_for('upload_resume') }}">Continue</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <h3>Resume status</h3>
+                <p class="muted">
+                    {% if session.get('uploaded_resume_path') %}
+                        Latest resume uploaded and ready for analysis.
+                    {% else %}
+                        No resume uploaded yet. Add your resume to get accurate insights.
+                    {% endif %}
+                </p>
+                <a href="{{ url_for('upload_resume') }}" class="link">Manage resumes →</a>
+            </article>
+
+            <article class="card">
+                <h3>Target career</h3>
+                <p class="muted">
+                    {% if session.get('target_career') %}
+                        Current goal: <strong>{{ session.get('target_career') }}</strong>.
+                    {% else %}
+                        Choose a target AI role to generate a focused learning roadmap.
+                    {% endif %}
+                </p>
+                <a href="{{ url_for('career_selection') }}" class="link">Choose a role →</a>
+            </article>
+
+            <article class="card wide-card">
+                <h3>Learning progress</h3>
+                <p class="muted">Track how far you’ve come against the recommended roadmap (coming soon).</p>
+                <div class="progress-track">
+                    <div class="progress-bar" style="width: 20%;"></div>
+                </div>
+                <p class="muted small">Demo progress: 20% complete</p>
+            </article>
+        </section>
+    </main>
+</div>
 </body>
 </html>
 
